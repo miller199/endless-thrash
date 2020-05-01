@@ -1,0 +1,15 @@
+Create a file in the same directory as endlessthrash.py named "token", which
+contains only your API token.
+
+Run endlessthrash.py (with python 3.5+).
+
+------------------------------------------------------------------------
+
+Creating the database tables:
+
+CREATE TABLE thrashers (
+    id_user varchar(128) NOT NULL DEFAULT '',
+    thrashcoin int NOT NULL DEFAULT '0',
+
+    PRIMARY KEY (id_user)
+);
