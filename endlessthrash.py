@@ -101,67 +101,6 @@ async def on_message(message):
         elif booru:
             return await cmd.link_image(cmd_obj, booru_list)
 
-# @client.event
-# async def on_message(message):
-#     if message.author != client.user:
-#         elif message.content.lower().startswith('!thrash'):
-#             emp1 = discord.utils.get(message.guild.emojis, name="blank")
-#             emp2 = discord.utils.get(message.guild.emojis, name="rf")
-#             emp3 = discord.utils.get(message.guild.emojis, name="s1")
-#             emp4 = discord.utils.get(message.guild.emojis, name="munchy")
-#             emp5 = discord.utils.get(message.guild.emojis, name="s3")
-#             em1 = str(emp1)
-#             em2 = str(emp2)
-#             em3 = str(emp3)
-#             em4 = str(emp4)
-#             em5 = str(emp5)
-#             n = '\n'
-#             thrash = em1 + em1 + em1 + em2 + em5 + em3 + em5 + em2 + em2 + em3 + em3 + em5 + em3 + em2 + n + em1 + em1 + em2 + em2 + em3 + em2 + em2 + em3 + em2 + em5 + em2 + em2 + em2 + em2 + em2 + n + em4 + em2 + em2 + em2 + em5 + em3 + em5 + em3 + em2 + em5 + em3 + em3 + em2 + em2 + em2 + em2 + em4 + n + em1 + em1 + em2 + em2 + em3 + em2 + em5 + em2 + em2 + em5 + em2 + em2 + em2 + em2 + em2 + n + em1 + em1 + em1 + em2 + em3 + em2 + em2 + em3 + em2 + em3 + em2 + em2 + em2 + em2
-#             await message.channel.send('*' + message.author.display_name + '*:\n' + thrash)
-#         elif message.content.lower().startswith('!doublethrash'):
-#             emp1 = discord.utils.get(message.guild.emojis, name="blank")
-#             emp2 = discord.utils.get(message.guild.emojis, name="rf")
-#             emp3 = discord.utils.get(message.guild.emojis, name="s1")
-#             emp4 = discord.utils.get(message.guild.emojis, name="munchy")
-#             emp5 = discord.utils.get(message.guild.emojis, name="s3")
-#             em1 = str(emp1)
-#             em2 = str(emp2)
-#             em3 = str(emp3)
-#             em4 = str(emp4)
-#             em5 = str(emp5)
-#             n = '\n'
-#             thrash = em1 + em1 + em1 + em2 + em5 + em3 + em5 + em2 + em2 + em3 + em3 + em5 + em3 + em2 + n + em1 + em1 + em2 + em2 + em3 + em2 + em2 + em3 + em2 + em5 + em2 + em2 + em2 + em2 + em2 + n + em4 + em2 + em2 + em2 + em5 + em3 + em5 + em3 + em2 + em5 + em3 + em3 + em2 + em2 + em2 + em2 + em4 + n + em1 + em1 + em2 + em2 + em3 + em2 + em5 + em2 + em2 + em5 + em2 + em2 + em2 + em2 + em2 + n + em1 + em1 + em1 + em2 + em3 + em2 + em2 + em3 + em2 + em3 + em2 + em2 + em2 + em2
-#             await message.channel.send('*' + message.author.display_name + '*:\n' + thrash, delete_after=90)
-#             await message.channel.send('*' + message.author.display_name + '*:\n' + thrash, delete_after=90)
-#         elif message.content.lower().startswith('!quadthrash'):
-#             emp1 = discord.utils.get(message.guild.emojis, name="blank")
-#             emp2 = discord.utils.get(message.guild.emojis, name="rf")
-#             emp3 = discord.utils.get(message.guild.emojis, name="s1")
-#             emp4 = discord.utils.get(message.guild.emojis, name="munchy")
-#             emp5 = discord.utils.get(message.guild.emojis, name="s3")
-#             em1 = str(emp1)
-#             em2 = str(emp2)
-#             em3 = str(emp3)
-#             em4 = str(emp4)
-#             em5 = str(emp5)
-#             n = '\n'
-#             thrash = em1 + em1 + em1 + em2 + em5 + em3 + em5 + em2 + em2 + em3 + em3 + em5 + em3 + em2 + n + em1 + em1 + em2 + em2 + em3 + em2 + em2 + em3 + em2 + em5 + em2 + em2 + em2 + em2 + em2 + n + em4 + em2 + em2 + em2 + em5 + em3 + em5 + em3 + em2 + em5 + em3 + em3 + em2 + em2 + em2 + em2 + em4 + n + em1 + em1 + em2 + em2 + em3 + em2 + em5 + em2 + em2 + em5 + em2 + em2 + em2 + em2 + em2 + n + em1 + em1 + em1 + em2 + em3 + em2 + em2 + em3 + em2 + em3 + em2 + em2 + em2 + em2
-#             await message.channel.send('*' + message.author.display_name + '*:\n' + thrash, delete_after=90)
-#             await message.channel.send('*' + message.author.display_name + '*:\n' + thrash, delete_after=90)
-#             await message.channel.send('*' + message.author.display_name + '*:\n' + thrash, delete_after=90)
-#             await message.channel.send('*' + message.author.display_name + '*:\n' + thrash, delete_after=90)
-#         elif message.content.lower().startswith('!album'):
-#             await message.channel.send('https://www.youtube.com/watch?v=6Bx5vWEoGpA\n\nIf you want to listen to the full thing uncopyright struck: https://thetobedecided.bandcamp.com/album/rowdy-power-album')
-#         elif message.content.lower().startswith('!takedown'):
-#             await message.channel.send("https://cdn.discordapp.com/attachments/522236656086941736/638174609719427090/mathew-thumbs-down.gif")
-#         elif message.content.lower().startswith('!freak'):
-#             if random.randrange(0,2) == 1:
-#                 await message.channel.send("https://cdn.discordapp.com/attachments/633521717444345857/633522227123322901/freddy_freaker2.gif")
-#             else:
-#                 await message.channel.send("1-900-490 FREAK")
-#         elif message.content.lower().startswith('!:maidsorts:'):
-#             await message.channel.send(random.choice(consorts.kanman))
-
 # find our REST API token
 token = utils.getToken()
 
