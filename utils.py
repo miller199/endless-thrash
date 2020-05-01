@@ -96,4 +96,4 @@ def getValueFromFileContents(fname):
 
 """ get the Discord API token from the config file on disk """
 def getToken():
-	return "NTgzODE2MjQ1MDA3MjIwNzYy.XqyQvQ.ianwNEd2vPXge0sBV_xyHivxAFA"
+	return getValueFromFileContents("token")
