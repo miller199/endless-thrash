@@ -1,0 +1,162 @@
+import random
+
+import utils
+import cfg
+
+from thrasher import Thrasher
+
+""" class to send general data about an interaction to a command """
+class ThrashCmd:
+	cmd = ""
+	tokens = []
+	tokens_count = 0
+	message = None
+	client = None
+	mentions = []
+	mentions_count = 0
+
+	def __init__(
+		self,
+		tokens = [],
+		message = None,
+		client = None,
+		mentions = []
+	):
+		self.tokens = tokens
+		self.message = message
+		self.client = client
+		self.mentions = mentions
+		self.mentions_count = len(mentions)
+
+		if len(tokens) >= 1:
+			self.tokens_count = len(tokens)
+			self.cmd = tokens[0]
+
+
+async def link_image(cmd, booru_list):
+	response = random.choice(booru_list)
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def thrash(cmd):
+	user_data = Thrasher(id_user=cmd.message.author.id)
+	user_data.thrashcoin += 1
+	user_data.persist()
+
+	response = '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_munchy + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_munchy + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def double_thrash(cmd):
+	user_data = Thrasher(id_user = cmd.message.author.id)
+
+	if user_data.thrashcoin >= 10:
+		for i in range(2):
+			await thrash(cmd)
+		return
+
+	else:
+		response = "You don't have enough !thrashcoin to !doublethrash. ({}/10)".format(user_data.thrashcoin)
+
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def triple_thrash(cmd):
+	user_data = Thrasher(id_user = cmd.message.author.id)
+
+	if user_data.thrashcoin >= 100:
+		for i in range(3):
+			await thrash(cmd)
+		return
+
+	else:
+		response = "You don't have enough !thrashcoin to !triplethrash. ({}/100)".format(user_data.thrashcoin)
+
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def quadruple_thrash(cmd):
+	user_data = Thrasher(id_user = cmd.message.author.id)
+
+	if user_data.thrashcoin >= 1000:
+		for i in range(4):
+			await thrash(cmd)
+		return
+
+	else:
+		response = "You don't have enough !thrashcoin to !quadruplethrash. ({}/1000)".format(user_data.thrashcoin)
+
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def quintuple_thrash(cmd):
+	user_data = Thrasher(id_user = cmd.message.author.id)
+
+	if user_data.thrashcoin >= 10000:
+		for i in range(5):
+			await thrash(cmd)
+		return
+
+	else:
+		response = "You don't have enough !thrashcoin to !quintuplethrash. ({}/10000)".format(user_data.thrashcoin)
+
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def sextuple_thrash(cmd):
+	user_data = Thrasher(id_user = cmd.message.author.id)
+
+	if user_data.thrashcoin >= 100000:
+		for i in range(6):
+			await thrash(cmd)
+		return
+
+	else:
+		response = "You don't have enough !thrashcoin to !sextuplethrash. ({}/100000)".format(user_data.thrashcoin)
+
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def septuple_thrash(cmd):
+	user_data = Thrasher(id_user = cmd.message.author.id)
+
+	if user_data.thrashcoin >= 1000000:
+		for i in range(7):
+			await thrash(cmd)
+		return
+
+	else:
+		response = "You don't have enough !thrashcoin to !septuplethrash. ({}/1000000)".format(user_data.thrashcoin)
+
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def takedown(cmd):
+	response = "https://cdn.discordapp.com/attachments/522236656086941736/638174609719427090/mathew-thumbs-down.gif"
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def themes(cmd):
+	response = 'https://www.youtube.com/playlist?list=PL_Lh9cF2MSf1AeTsszptxrupK0Zds6S5G'
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def gamering(cmd):
+	response = 'https://youtu.be/jdtstiuYxis'
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def frog(cmd):
+	response = 'Who?'
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def goodboy(cmd):
+	response = "https://img.booru.org/rfck//images/1/93c3572a5ae571efe866620cc0c744147d597c24.jpg"
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def laughtrack(cmd):
+	response = cfg.emote_etlaugh
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def modelo(cmd):
+	response = "https://youtube.com/watch?v=Gd9P378edq4"
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def vibecheck(cmd):
+	response = "Vibe checking is currently under construction."
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def thrashcoin(cmd):
+	user_data = Thrasher(id_user = cmd.message.author.id)
+
+	response = "You currently have {} !thrashcoin.".format(user_data.thrashcoin)
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))

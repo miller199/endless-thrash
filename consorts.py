@@ -1466,3 +1466,9 @@ munchy = [
     'https://img.booru.org/rfck//images/4/7561c14f5b2052e5b7d7821a50c70f88cdedb404.jpg',
     'https://img.booru.org/rfck//images/4/ba63ef0ac25a5d6878ef271b2b81e78b07e623df.png',
     ]
+
+hex = [
+    "https://img.booru.org/rfck//images/5/711b7517184bbe11fe97ba80cfe07d13f12ca060.png",
+    "https://img.booru.org/rfck//images/5/63418ff175c1083a24fb1cf9c8e5d909fd0fb929.png",
+    "https://img.booru.org/rfck//images/5/615536aef063d987812ad494bada06616d262c13.png",
+]
