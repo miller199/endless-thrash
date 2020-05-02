@@ -163,7 +163,7 @@ async def thrashcoin(cmd):
 		return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 
 	else:
-		user_data = Thrasher(id_user = cmd.mentions[0])
+		user_data = Thrasher(id_user = cmd.mentions[0].id)
 
 		response = "They currently have {} !thrashcoin.".format(user_data.thrashcoin)
 		return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
@@ -187,7 +187,6 @@ async def leaderboard(cmd):
 		data = cursor.fetchall()
 		if data != None:
 			for row in data:
-				print(row[1])
 				response += "{} `{:_>15} | {}`\n".format(
 					cfg.emote_blank,
 					row[1],
