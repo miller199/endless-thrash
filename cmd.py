@@ -156,7 +156,46 @@ async def vibecheck(cmd):
 	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 
 async def thrashcoin(cmd):
-	user_data = Thrasher(id_user = cmd.message.author.id)
+	if cmd.mentions_count == 0:
+		user_data = Thrasher(id_user = cmd.message.author.id)
 
-	response = "You currently have {} !thrashcoin.".format(user_data.thrashcoin)
-	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+		response = "You currently have {} !thrashcoin.".format(user_data.thrashcoin)
+		return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+	else:
+		user_data = Thrasher(id_user = cmd.mentions[0])
+
+		response = "They currently have {} !thrashcoin.".format(user_data.thrashcoin)
+		return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def leaderboard(cmd):
+	response = "{rf} ▓▓▓▓▓ TOP THRASHERS ▓▓▓▓▓ {rf}\n".format(
+		rf = cfg.emote_rf
+	)
+
+	try:
+		conn_info = utils.databaseConnect()
+		conn = conn_info.get('conn')
+		cursor = conn.cursor()
+
+		cursor.execute(
+				"SELECT t.id_user, t.thrashcoin " +
+				"FROM thrashers as t " +
+				"ORDER BY t.thrashcoin DESC LIMIT 10"
+		)
+
+		data = cursor.fetchall()
+		if data != None:
+			for row in data:
+				print(row[1])
+				response += "{} `{:_>15} | {}`\n".format(
+					cfg.emote_blank,
+					row[1],
+					cmd.message.server.get_member(row[0]).display_name.replace("`", ""),
+				)
+	finally:
+		# Clean up the database handles.
+		cursor.close()
+		utils.databaseClose(conn_info)
+
+	return await utils.send_message(cmd.client, cmd.message.channel, response.replace("@", "\{at\}"))

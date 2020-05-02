@@ -32,6 +32,9 @@ cmd_map = {
     cfg.cmd_modelo: cmd.modelo,
     cfg.cmd_vibecheck: cmd.vibecheck,
     cfg.cmd_thrashcoin: cmd.thrashcoin,
+    cfg.cmd_thrashcoin_alt1: cmd.thrashcoin,
+    cfg.cmd_thrashcoin_alt2: cmd.thrashcoin,
+    cfg.cmd_leaderboard: cmd.leaderboard,
 }
 
 @client.event
