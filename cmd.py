@@ -173,28 +173,28 @@ async def leaderboard(cmd):
 		rf = cfg.emote_rf
 	)
 
-	try:
-		conn_info = utils.databaseConnect()
-		conn = conn_info.get('conn')
-		cursor = conn.cursor()
 
-		cursor.execute(
-				"SELECT t.id_user, t.thrashcoin " +
-				"FROM thrashers as t " +
-				"ORDER BY t.thrashcoin DESC LIMIT 10"
-		)
+	conn_info = utils.databaseConnect()
+	conn = conn_info.get('conn')
+	cursor = conn.cursor()
 
-		data = cursor.fetchall()
-		if data != None:
-			for row in data:
-				response += "{} `{:_>15} | {}`\n".format(
-					cfg.emote_blank,
-					row[1],
-					cmd.message.server.get_member(row[0]).display_name.replace("`", ""),
-				)
-	finally:
-		# Clean up the database handles.
-		cursor.close()
-		utils.databaseClose(conn_info)
+	cursor.execute(
+			"SELECT t.id_user, t.thrashcoin " +
+			"FROM thrashers as t " +
+			"ORDER BY t.thrashcoin DESC LIMIT 10"
+	)
+
+	data = cursor.fetchall()
+	if data != None:
+		for row in data:
+			response += "{} `{:_>15} | {}`\n".format(
+				cfg.emote_blank,
+				row[1],
+				cmd.message.server.get_member(row[0]).display_name.replace("`", ""),
+			)
+			
+	# Clean up the database handles.
+	cursor.close()
+	utils.databaseClose(conn_info)
 
 	return await utils.send_message(cmd.client, cmd.message.channel, response.replace("@", "\{at\}"))
