@@ -47,10 +47,13 @@ async def thrash(cmd):
 
 async def double_thrash(cmd):
 	user_data = Thrasher(id_user = cmd.message.author.id)
+	user_data.thrashcoin += 2
+	user_data.persist()
 
 	if user_data.thrashcoin >= 10:
+		response = '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_munchy + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_munchy + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf
 		for i in range(2):
-			await thrash(cmd)
+			await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 		return
 
 	else:
@@ -60,10 +63,13 @@ async def double_thrash(cmd):
 
 async def triple_thrash(cmd):
 	user_data = Thrasher(id_user = cmd.message.author.id)
+	user_data.thrashcoin += 3
+	user_data.persist()
 
 	if user_data.thrashcoin >= 100:
+		response = '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_munchy + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_munchy + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf
 		for i in range(3):
-			await thrash(cmd)
+			await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 		return
 
 	else:
@@ -73,10 +79,13 @@ async def triple_thrash(cmd):
 
 async def quadruple_thrash(cmd):
 	user_data = Thrasher(id_user = cmd.message.author.id)
+	user_data.thrashcoin += 4
+	user_data.persist()
 
 	if user_data.thrashcoin >= 1000:
+		response = '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_munchy + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_munchy + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf
 		for i in range(4):
-			await thrash(cmd)
+			await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 		return
 
 	else:
@@ -86,10 +95,13 @@ async def quadruple_thrash(cmd):
 
 async def quintuple_thrash(cmd):
 	user_data = Thrasher(id_user = cmd.message.author.id)
+	user_data.thrashcoin += 5
+	user_data.persist()
 
 	if user_data.thrashcoin >= 10000:
+		response = '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_munchy + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_munchy + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf
 		for i in range(5):
-			await thrash(cmd)
+			await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 		return
 
 	else:
@@ -99,10 +111,13 @@ async def quintuple_thrash(cmd):
 
 async def sextuple_thrash(cmd):
 	user_data = Thrasher(id_user = cmd.message.author.id)
+	user_data.thrashcoin += 6
+	user_data.persist()
 
 	if user_data.thrashcoin >= 100000:
+		response = '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_munchy + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_munchy + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf
 		for i in range(6):
-			await thrash(cmd)
+			await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 		return
 
 	else:
@@ -112,10 +127,13 @@ async def sextuple_thrash(cmd):
 
 async def septuple_thrash(cmd):
 	user_data = Thrasher(id_user = cmd.message.author.id)
+	user_data.thrashcoin += 7
+	user_data.persist()
 
 	if user_data.thrashcoin >= 1000000:
+		response = '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_munchy + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_munchy + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf
 		for i in range(7):
-			await thrash(cmd)
+			await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 		return
 
 	else:
@@ -192,7 +210,7 @@ async def leaderboard(cmd):
 				row[1],
 				cmd.message.server.get_member(row[0]).display_name.replace("`", ""),
 			)
-			
+
 	# Clean up the database handles.
 	cursor.close()
 	utils.databaseClose(conn_info)
