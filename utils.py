@@ -64,7 +64,7 @@ def logMsg(string):
 
 async def send_message(client, channel, text, image_name = None):
     try:
-        return await channel.send(context=text)
+        return await channel.send(content=text)
     except discord.errors.Forbidden:
         logMsg('Could not message user: {}\n{}'.format(channel, text))
         raise
