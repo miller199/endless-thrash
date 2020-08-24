@@ -10,7 +10,7 @@ import utils
 import cfg
 import cmd
 
-client = discord.Client()
+client = discord.Guild()
 
 # Map of all command words in the game to their implementing function.
 cmd_map = {
