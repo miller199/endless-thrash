@@ -37,7 +37,7 @@ emote_etlaugh = "<:etlaugh:642844353282441231>"
 
 booru_commands = {
     cmd_prefix + "doop": consorts.doop,
-    cmd_prefix + "kanm": consorts.kanman,
+    cmd_prefix + "kan": consorts.kanman,
     cmd_prefix + "crocs": consorts.crocs,
     cmd_prefix + "paradox": consorts.crocs,
     cmd_prefix + "sixt": consorts.sixten,
@@ -56,6 +56,7 @@ booru_commands = {
     cmd_prefix + "krip": consorts.krip,
     cmd_prefix + "king": consorts.krip,
     cmd_prefix + "ed": consorts.krip,
+    cmd_prefix + "rosa": consorts.krip,
     cmd_prefix + "m@": consorts.m,
     cmd_prefix + "mat": consorts.m,
     cmd_prefix + "shill": consorts.m,
@@ -72,6 +73,17 @@ booru_commands = {
     cmd_prefix + "ethan": consorts.ethan,
     cmd_prefix + "straub": consorts.ethan,
     cmd_prefix + "munch": consorts.munchy,
+    cmd_prefix + "stotle": consorts.stotle,
+    cmd_prefix + "aris": consorts.stotle,
+    cmd_prefix + "kib": consorts.kibun,
+    cmd_prefix + "gab": consorts.gabe,
+    cmd_prefix + "scep": consorts.sceptrai,
+    cmd_prefix + "omni": consorts.omni,
+    cmd_prefix + "fork": consorts.forkes,
+    cmd_prefix + "shad": consorts.shadok,
+    cmd_prefix + "cal": consorts.callum,
+    cmd_prefix + "pris": consorts.prism,
+    cmd_prefix + "ack": consorts.ackro,
 }
 
 client_ref = None
