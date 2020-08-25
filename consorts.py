@@ -1470,6 +1470,12 @@ hex = [
     "https://img.booru.org/rfck//images/5/711b7517184bbe11fe97ba80cfe07d13f12ca060.png",
     "https://img.booru.org/rfck//images/5/63418ff175c1083a24fb1cf9c8e5d909fd0fb929.png",
     "https://img.booru.org/rfck//images/5/615536aef063d987812ad494bada06616d262c13.png",
+    "https://img.booru.org/rfck//images/7/06155999d9116b79f53524ba1f8497052f220eda.png",
+    "https://img.booru.org/rfck//images/7/2a8b4dd8c2e5ceeb49dde83edeb22f4d75a75dd4.gif",
+    "https://img.booru.org/rfck//images/7/664af36f5067cc5aadba2cd031bbf4ba7475a3d9.png",
+    "https://img.booru.org/rfck//images/7/aed45841d4f34109a3271d8a0d62587a8332391c.png",
+    "https://img.booru.org/rfck//images/7/6660a7a1fdab0f0a02c2dbbf6d342dff943b1b47.png",
+    "https://img.booru.org/rfck//images/7/99b1dd81d7e33ff90e9f9109c12682543b6b04a9.png",
 ]
 
 smearg = []
