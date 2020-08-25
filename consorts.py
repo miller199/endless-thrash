@@ -718,7 +718,12 @@ juan = [
     'https://img.booru.org/rfck//images/4/93b3a6a6b18f2db5407e7dd3b6bfb1294d949bca.png',
     'https://img.booru.org/rfck//images/4/610823cbf6df3c33c0facee6f77b5a6d460a8981.png',
     'https://img.booru.org/rfck//images/4/6249467aa21b95caa69eeca5226ff15933fc64fa.png',
-    ] # last addition:
+    'https://img.booru.org/rfck//images/7/c5c26c1df394a268f412f1cd9d98f9c7d7f7b1e4.png',
+    'https://img.booru.org/rfck//images/7/e3692a7d1e80099565fea8b5a9a6f99bf48b22ca.jpg',
+    'https://img.booru.org/rfck//images/7/c36ac0d7718d62219fe1dee6f0b661157fa421e0.jpg',
+    'https://img.booru.org/rfck//images/6/1c53b3ac2a507bf1c5af881ad3b32e484f2f88ec.png',
+    'https://img.booru.org/rfck//images/5/f0e8789a7aeaf22de810571c5b3d8ad59874ded9.png',
+    ] # last addition: https://img.booru.org/rfck//images/7/c5c26c1df394a268f412f1cd9d98f9c7d7f7b1e4.png
 
 nnoby = [
     'https://img.booru.org/rfck//images/3/af0099c50e749a35adf7c98487f18e54ea30e6fb.png',
