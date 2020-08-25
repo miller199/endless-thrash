@@ -90,10 +90,11 @@ async def on_message(message):
         # Check if its a booru list command.
         booru = False
 
-        for name in cfg.booru_commands.keys():
-            if message.content.startswith(name):
-                booru = True
-                booru_list = cfg.booru_commands[name]
+        if message.content not in ("!miller", "!kanman"):
+            for name in cfg.booru_commands.keys():
+                if message.content.startswith(name):
+                    booru = True
+                    booru_list = cfg.booru_commands[name]
 
         # Check the main command map for the requested command.
         global cmd_map
