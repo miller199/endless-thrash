@@ -173,6 +173,14 @@ async def vibecheck(cmd):
 	response = "Vibe checking is currently under construction."
 	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 
+async def miller(cmd):
+	response = "Who? (use !milly)"
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
+async def kanman(cmd):
+	response = "Who? (use !kanny)"
+	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
+
 async def thrashcoin(cmd):
 	if cmd.mentions_count == 0:
 		user_data = Thrasher(id_user = cmd.message.author.id)
