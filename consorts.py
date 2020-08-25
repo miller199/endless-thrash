@@ -760,7 +760,19 @@ nnoby = [
     'https://img.booru.org/rfck//images/4/e8e64284f8c85a8917ee72ea4140fd69142996e7.png',
     'https://img.booru.org/rfck//images/4/ad7bfedc8909da286c5412ee933ac833cc4b4888.png',
     'https://img.booru.org/rfck//images/4/785d0bc14ccd845eaa5201da6df264746ae60dbc.png',
-    ] # last addition:
+    'https://img.booru.org/rfck//images/7/b229a09c4cd1d855692b4a62a1a52a67d98193c1.gif',
+    'https://img.booru.org/rfck//images/7/138c56ca080acb96f83e6d146ea51ce8e162e207.jpg',
+    'https://img.booru.org/rfck//images/7/e475c598d0cd2fa19563efc54e7ea6e2a063efc7.jpg',
+    'https://img.booru.org/rfck//images/7/89f2fccae85d7118a290f233cf6b1563170aefe0.png',
+    'https://img.booru.org/rfck//images/6/bc1b1f2385045242467e7cf8b46a60c343ad7e8b.png',
+    'https://img.booru.org/rfck//images/6/c8dab4157b8240bfa6cadcc6d9fe210f04f00cd7.png',
+    'https://img.booru.org/rfck//images/6/1c53b3ac2a507bf1c5af881ad3b32e484f2f88ec.png',
+    'https://img.booru.org/rfck//images/6/c44b69522ae066d28002c88eb299f0066cbff927.jpg',
+    'https://img.booru.org/rfck//images/5/8818958fdb8ed8072d51495bb0c4597b5be8a88c.png',
+    'https://img.booru.org/rfck//images/5/421f33e3eeb77373833be2636f208a9ef318b04c.jpg',
+    'https://img.booru.org/rfck//images/5/88a9659799324e8b9b51f39fd73f56e80023e4ed.png',
+    'https://img.booru.org/rfck//images/5/15d3cbd7e4615617a2e89f4ef811bb82d53fb078.jpg',
+    ] # last addition: https://img.booru.org/rfck//images/7/b229a09c4cd1d855692b4a62a1a52a67d98193c1.gif
 
 connor = [
     'https://img.booru.org/rfck//images/3/5af052ec1278341d9cad9c7b9991b34f67d14716.png',
