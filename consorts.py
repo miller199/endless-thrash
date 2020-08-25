@@ -687,7 +687,11 @@ sixten = [
     "https://img.booru.org/rfck//images/4/632d82538a9b0e029dd71c41bfd8e30cb3bf2bf3.png",
     "https://img.booru.org/rfck//images/4/424491ed583e51ef9891744f4afec4a16063465d.gif",
     "https://img.booru.org/rfck//images/5/feac94fed05a4dea5ccdbae39befde38cd1e8367.png",
-    ] # last addition:
+    "https://img.booru.org/rfck//images/7/a0995d78eb383864d40af9e65557729dd3751756.jpg",
+    "https://img.booru.org/rfck//images/7/e0dbd509104abb1a0914106f3599e0bc624329e7.jpg",
+    "https://img.booru.org/rfck//images/5/17294ff7582d476bc44a929d686e93f51ea39b83.jpg",
+    "https://img.booru.org/rfck//images/5/93165877527846f5f52d1bb2e9df7f58226e8a69.png",
+    ] # last addition: https://img.booru.org/rfck//images/7/a0995d78eb383864d40af9e65557729dd3751756.jpg
 
 juan = [
     'https://img.booru.org/rfck//images/3/2fec69252645b7930b64e56d55454e16f957afb4.png',
