@@ -1801,7 +1801,7 @@ mal = [
     'https://img.booru.org/rfck//images/5/ff95475ef262d4770d5c71fd4aec606bdb6bc749.png',
     'https://img.booru.org/rfck//images/5/22fc804378af4081ae3fe6487adba4b4cb3fb290.jpg',
     'https://img.booru.org/rfck//images/5/97f47c3f901f80a3e225159ca5f0b13306637846.png',
-    ] # last addition:
+    ] # last addition: https://img.booru.org/rfck//images/7/91fdce4c60af95266304bd4771f38ce1f454b2a3.png
 
 miller = [
     'https://img.booru.org/rfck//images/3/7d5d47d24fef37003507aed7c741120932b96526.png',
@@ -1845,7 +1845,39 @@ miller = [
     'https://img.booru.org/rfck//images/4/55d1904a60c9947ef5cb735b0e0fab656d37b411.png',
     'https://img.booru.org/rfck//images/4/2a84205fed9b5dcd6b8ce8eb6ae976257c52319e.png',
     'https://img.booru.org/rfck//images/4/810540ca8c25d5e9cc60542c7dd4bf755d231863.png',
-    ] # last addition:
+    'https://img.booru.org/rfck//images/5/f80291a54678f151c198682eef7d151ce453ab66.png',
+    'https://img.booru.org/rfck//images/5/f75d8157b4e958596875ee39b5c34f06fef24df0.png',
+    'https://img.booru.org/rfck//images/5/393df663e1a408afa94f0545c4e4f06577d9f565.png',
+    'https://img.booru.org/rfck//images/5/490d587c1156ac3506a57750779cb2d3044c1759.png',
+    'https://img.booru.org/rfck//images/5/e80c3003cdd90ca1a311206f1d7f87b954c2dadc.png',
+    'https://img.booru.org/rfck//images/5/8d07be0900f7d426639181f5212731bf0a7fc3ca.png',
+    'https://img.booru.org/rfck//images/5/31e500c99ec4ad0a4ae8941b53b89d83fbae5411.png',
+    'https://img.booru.org/rfck//images/4/ddcf4300c567b5304b81ef541f006d2b9c187bf5.png',
+    'https://img.booru.org/rfck//images/6/210c2a881259afe7b49f2a27997bbde9ab090b8b.gif',
+    'https://img.booru.org/rfck//images/6/662e5a224b88125aedf52ac855472b04519bcb27.png',
+    'https://img.booru.org/rfck//images/6/585a99bc709bb975d131b6308b9d98af2361a8a1.jpg',
+    'https://img.booru.org/rfck//images/5/8e8b52f0bce387174e607643a93164a9d0e63e42.png',
+    'https://img.booru.org/rfck//images/5/08c58b74c39f4f641912feeb1bde8eb92b5bb583.gif',
+    'https://img.booru.org/rfck//images/5/349eee32fd0d12021aa6bc432eae963465ce4acb.png',
+    'https://img.booru.org/rfck//images/5/e32df4d0ad57d2c9b66046713f59e95479d97275.jpg',
+    'https://img.booru.org/rfck//images/5/de05fa42e927937b1cc4682f23f2744535cf3202.gif',
+    'https://img.booru.org/rfck//images/5/645ad55e35de6bec33aeda53de84662a8c33a5aa.jpg',
+    'https://img.booru.org/rfck//images/5/965ebbc1e14360682fe072c1feb45713d24caeac.png',
+    'https://img.booru.org/rfck//images/5/6c230a02e38d4c42617ea05165be22331d33c98a.jpg',
+    'https://img.booru.org/rfck//images/7/3bd407cb4cb0ec0b53d6328b9bbcf32ca997ce66.png',
+    'https://img.booru.org/rfck//images/7/8e610e0a9c0a8ce2bad0d7eaf429f2acc9d8019b.png',
+    'https://img.booru.org/rfck//images/6/394438f774c8ab78d4184a45f480cbd6d5cc3feb.png',
+    'https://img.booru.org/rfck//images/6/98eb102848d47e249948fb95389a9702bc7b45f3.jpg',
+    'https://img.booru.org/rfck//images/6/a37809f1c16339b114d26a290b12aea47e8813ee.jpg',
+    'https://img.booru.org/rfck//images/6/708e4b85672cfab48e6d630de362584ad6de11fe.jpg',
+    'https://img.booru.org/rfck//images/6/e14a45ec273d45f23bbb42c44e7c7da76a15e484.jpg',
+    'https://img.booru.org/rfck//images/6/41a349701442333fa2cd1bdcae259198dbe14ef8.jpg',
+    'https://img.booru.org/rfck//images/6/1fd45cdb4629d84c0b5b04bb85356700792bd65b.png',
+    'https://img.booru.org/rfck//images/6/4ff82f442f03b15f637dfdcc5fad6ef5ff9a0361.png',
+    'https://img.booru.org/rfck//images/6/609ae0e2bf8cb7fba8ffa15025f45956e1c3673b.png',
+    'https://img.booru.org/rfck//images/6/3e90cbacefac934886714c9b810c9d50f3c32402.png',
+    'https://img.booru.org/rfck//images/6/a18c85ef0ad5708059f22f0820615b47c938a51f.png',
+    ] # last addition: https://img.booru.org/rfck//images/7/3bd407cb4cb0ec0b53d6328b9bbcf32ca997ce66.png
 
 meaty = [
     'https://img.booru.org/rfck//images/2/3fb774e2e42c754e60f21a0ceec2380a919707c6.png',
