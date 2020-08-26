@@ -1790,6 +1790,17 @@ mal = [
     'https://img.booru.org/rfck//images/4/1c633d891723a3f720be5d57516a1d94524e5b0e.jpg',
     'https://img.booru.org/rfck//images/4/0fb99578eec3a21ccd5e8f7aa4aa1cdc311655e6.png',
     'https://img.booru.org/rfck//images/5/4afa2210aa6afc1cff972ddefdea948fc58d62a5.png',
+    'https://img.booru.org/rfck//images/7/91fdce4c60af95266304bd4771f38ce1f454b2a3.png',
+    'https://img.booru.org/rfck//images/7/7032293fee35f624ac2acf274f982176713e1032.jpg',
+    'https://img.booru.org/rfck//images/6/e96818e565b2169d56c730ddd080b403ffc06e11.png',
+    'https://img.booru.org/rfck//images/6/e8622a053adb5a6ded27677623e92679f9929c1e.png',
+    'https://img.booru.org/rfck//images/6/f521404776aad8e7775156b8d3d7ef1584aa4edc.png',
+    'https://img.booru.org/rfck//images/5/0e28afe63ce14012749feddd0d6326e24de3bce0.png',
+    'https://img.booru.org/rfck//images/5/7b0c1dc141b418a125452a6d01bc9c9e05bf52d6.png',
+    'https://img.booru.org/rfck//images/5/cda8bde934b2cd8551c9007b26975a87af5905a2.jpg',
+    'https://img.booru.org/rfck//images/5/ff95475ef262d4770d5c71fd4aec606bdb6bc749.png',
+    'https://img.booru.org/rfck//images/5/22fc804378af4081ae3fe6487adba4b4cb3fb290.jpg',
+    'https://img.booru.org/rfck//images/5/97f47c3f901f80a3e225159ca5f0b13306637846.png',
     ] # last addition:
 
 miller = [
