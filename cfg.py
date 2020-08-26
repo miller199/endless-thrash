@@ -84,6 +84,7 @@ booru_commands = {
     cmd_prefix + "cal": consorts.callum,
     cmd_prefix + "pris": consorts.prism,
     cmd_prefix + "ack": consorts.ackro,
+    cmd_prefix + "smear": consorts.smearg,
 }
 
 client_ref = None
