@@ -1262,7 +1262,14 @@ fat = [
     'https://img.booru.org/rfck//images/4/ad91c9fe42f4c02537c1beabc893b4370029150d.png',
     'https://img.booru.org/rfck//images/4/842b752b9eaaaac4e0b003b0ed369b7ab743ac9e.png',
     'https://img.booru.org/rfck//images/4/a785dccaa947a7b2b0b8ec234a1270779a445cd2.png',
-    ] # last addition:
+    'https://img.booru.org/rfck//images/5/ddbb94ee2e91a0af2e034ee2ac66c0504ab0c79f.png',
+    'https://img.booru.org/rfck//images/5/e19bcf7325bde73f79e5909658cc8f2ceb6c4643.gif',
+    'https://img.booru.org/rfck//images/7/93207a796210d106301145d8f283a1410c66596e.png',
+    'https://img.booru.org/rfck//images/6/3a0f5ca5507280e550d3b228ac91bb537644ae39.png',
+    'https://img.booru.org/rfck//images/5/25c0d4f2fed97191936b07c11d56f5cff3a4f676.png',
+    'https://img.booru.org/rfck//images/5/884f777b78b9709011d876f3dcea6b402bb5fce2.png',
+    'https://img.booru.org/rfck//images/7/d3deb6c4f3b8d87ecdde61e0c8a1b1fd2b229dae.gif',
+    ] # last addition: https://img.booru.org/rfck//images/7/d3deb6c4f3b8d87ecdde61e0c8a1b1fd2b229dae.gif
 
 robo = [
     'https://img.booru.org/rfck//images/3/5d0d062ea8f284125104cf4efc05b02a4043ef54.png',
