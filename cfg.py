@@ -24,6 +24,8 @@ cmd_thrashcoin = cmd_prefix + "thrashcoin"
 cmd_thrashcoin_alt1 = cmd_prefix + "tc"
 cmd_thrashcoin_alt2 = cmd_prefix + "coin"
 cmd_leaderboard = cmd_prefix + "leaderboard"
+cmd_miller = cmd_prefix + "miller"
+cmd_kanman = cmd_prefix + "kanman"
 
 col_id_user = "id_user"
 col_thrashcoin = "thrashcoin"

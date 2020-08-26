@@ -37,6 +37,8 @@ cmd_map = {
     cfg.cmd_thrashcoin_alt1: cmd.thrashcoin,
     cfg.cmd_thrashcoin_alt2: cmd.thrashcoin,
     cfg.cmd_leaderboard: cmd.leaderboard,
+    cfg.cmd_kanman: cmd.kanman,
+    cfg.cmd_miller: cmd.miller,
 }
 
 @client.event
