@@ -2915,8 +2915,8 @@ ackro = [
     'https://img.booru.org/rfck//images/6/f7a9c7c91347f6cab64816896551b97b3a11288d.png',
     'https://img.booru.org/rfck//images/6/9b61363a03713c5a607d76d200d1d5981c716ef6.png',
     'https://img.booru.org/rfck//images/6/9db7e99a1f5e3883df46df0aef2c6b99e238a5a0.png',
-    'https://img.booru.org/rfck//images/7/9ff60bc0704a2c4b64579f11d0bc29ad41d1ca5e.png',
-] # last addition: https://img.booru.org/rfck//images/7/9ff60bc0704a2c4b64579f11d0bc29ad41d1ca5e.png
+    'https://img.booru.org/rfck//images/7/b46d3dd9723df201c289aa9f15cbe6e1d95709f4.png',
+] # last addition: https://img.booru.org/rfck//images/7/b46d3dd9723df201c289aa9f15cbe6e1d95709f4.png
 
 callum = [
     'https://img.booru.org/rfck//images/5/bb5da7dd618b9e7e9b1a3c7b1142cd794abdcb22.png',
