@@ -5,12 +5,19 @@ import time
 import random
 import shlex
 import sys
+import asyncio
+import os
 
 import utils
 import cfg
 import cmd
 
+utils.logMsg('Starting up...')
+init_complete = False
+
 client = discord.Client()
+
+thrashcoin_queue = {}
 
 # Map of all command words in the game to their implementing function.
 cmd_map = {
@@ -43,8 +50,44 @@ cmd_map = {
 
 @client.event
 async def on_ready():
-    print("Server entered.")
-    print(client.user)
+    global init_complete
+    if init_complete:
+        return
+    init_complete = True
+    cfg.set_client(client)
+    utils.logMsg('Logged in as {} ({}).'.format(client.user.name, client.user.id))
+
+    try:
+        await client.change_presence(game=discord.Game(name="!THRASH"))
+    except:
+        utils.logMsg("Failed to change_presence!")
+
+    utils.logMsg('Ready.')
+
+    """
+        Set up for infinite loop to perform periodic tasks.
+    """
+    time_now = int(time.time())
+
+    # Every three hours we log a message saying the periodic task hook is still active. On startup, we want this to happen within about 60 seconds, and then on the normal 3 hour interval.
+    time_last_logged = time_now - cfg.update_hookstillactive + 60
+
+    stream_live = None
+
+    utils.logMsg('Beginning periodic hook loop.')
+    while not utils.TERMINATE:
+        time_now = int(time.time())
+
+        # Periodic message to log that this stuff is still running.
+        if (time_now - time_last_logged) >= cfg.update_hookstillactive:
+            time_last_logged = time_now
+
+            utils.logMsg("Periodic hook still active.")
+
+        # Wait a while before running periodic tasks.
+        await asyncio.sleep(15)
+
+
 
 @client.event
 async def on_message(message):
@@ -113,12 +156,12 @@ async def on_message(message):
 token = utils.getToken()
 
 if token == None or len(token) == 0:
-	utils.logMsg('Please place your API token in a file called "token", in the same directory as this script.')
-	sys.exit(0)
+    utils.logMsg('Please place your API token in a file called "token", in the same directory as this script.')
+    sys.exit(0)
 
 # connect to discord and run indefinitely
 try:
-	client.run(token)
+    client.run(token)
 finally:
-	utils.TERMINATE = True
-	utils.logMsg("main thread terminated.")
+    utils.TERMINATE = True
+    utils.logMsg("main thread terminated.")

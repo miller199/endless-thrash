@@ -1,5 +1,8 @@
 import consorts
 
+# Update intervals
+update_hookstillactive = 60 * 60 * 3
+
 cmd_prefix = "!"
 cmd_thrash = cmd_prefix + "thrash"
 cmd_doublethrash = cmd_prefix + "doublethrash"
