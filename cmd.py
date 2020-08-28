@@ -213,11 +213,12 @@ async def leaderboard(cmd):
 	data = cursor.fetchall()
 	if data != None:
 		for row in data:
-			response += "{} `{:_>15} | {}`\n".format(
-				cfg.emote_blank,
-				row[1],
-				cmd.message.guild.get_member(int(row[0])).display_name.replace("`", ""),
-			)
+			if cmd.message.guild.get_member(int(row[0])) is not None:
+				response += "{} `{:_>15} | {}`\n".format(
+					cfg.emote_blank,
+					row[1],
+					cmd.message.guild.get_member(int(row[0])).display_name.replace("`", ""),
+				)
 
 	# Clean up the database handles.
 	cursor.close()
