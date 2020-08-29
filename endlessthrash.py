@@ -17,8 +17,6 @@ init_complete = False
 
 client = discord.Client()
 
-thrashcoin_queue = {}
-
 # Map of all command words in the game to their implementing function.
 cmd_map = {
     cfg.cmd_thrash: cmd.thrash,

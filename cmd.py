@@ -5,6 +5,8 @@ import cfg
 
 from thrasher import Thrasher
 
+thrashcoin_queue = {}
+
 """ class to send general data about an interaction to a command """
 class ThrashCmd:
 	cmd = ""
@@ -38,106 +40,138 @@ async def link_image(cmd, booru_list):
 	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 
 async def thrash(cmd):
-	user_data = Thrasher(id_user=cmd.message.author.id)
-	user_data.thrashcoin += 1
-	user_data.persist()
+	if cmd.message.author.id not in thrashcoin_queue.keys():
+		thrashcoin_queue[cmd.message.author.id] = 1
+
+	else:
+		thrashcoin_queue[cmd.message.author.id] += 1
 
 	response = '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_munchy + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_munchy + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf
 	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 
 async def double_thrash(cmd):
-	user_data = Thrasher(id_user = cmd.message.author.id)
-	user_data.thrashcoin += 2
-	user_data.persist()
+	user_data = Thrasher(id_user=cmd.message.author.id)
+	if cmd.message.author.id not in thrashcoin_queue.keys():
+		thrashcoin_queue[cmd.message.author.id] = 0
+		current_tc = user_data.thrashcoin
 
-	if user_data.thrashcoin >= 10:
+	else:
+		current_tc = user_data.thrashcoin + thrashcoin_queue[cmd.message.author.id]
+
+	if current_tc >= 10:
+		thrashcoin_queue[cmd.message.author.id] += 2
 		response = '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_munchy + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_munchy + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf
 		for i in range(2):
 			await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 		return
 
 	else:
-		response = "You don't have enough !thrashcoin to !doublethrash. ({}/10)".format(user_data.thrashcoin)
+		response = "You don't have enough !thrashcoin to !doublethrash. ({}/10)".format(current_tc)
 
 	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 
 async def triple_thrash(cmd):
-	user_data = Thrasher(id_user = cmd.message.author.id)
-	user_data.thrashcoin += 3
-	user_data.persist()
+	user_data = Thrasher(id_user=cmd.message.author.id)
+	if cmd.message.author.id not in thrashcoin_queue.keys():
+		thrashcoin_queue[cmd.message.author.id] = 0
+		current_tc = user_data.thrashcoin
 
-	if user_data.thrashcoin >= 100:
+	else:
+		current_tc = user_data.thrashcoin + thrashcoin_queue[cmd.message.author.id]
+
+	if current_tc >= 100:
+		thrashcoin_queue[cmd.message.author.id] += 3
 		response = '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_munchy + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_munchy + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf
 		for i in range(3):
 			await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 		return
 
 	else:
-		response = "You don't have enough !thrashcoin to !triplethrash. ({}/100)".format(user_data.thrashcoin)
+		response = "You don't have enough !thrashcoin to !triplethrash. ({}/100)".format(current_tc)
 
 	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 
 async def quadruple_thrash(cmd):
-	user_data = Thrasher(id_user = cmd.message.author.id)
-	user_data.thrashcoin += 4
-	user_data.persist()
+	user_data = Thrasher(id_user=cmd.message.author.id)
+	if cmd.message.author.id not in thrashcoin_queue.keys():
+		thrashcoin_queue[cmd.message.author.id] = 0
+		current_tc = user_data.thrashcoin
 
-	if user_data.thrashcoin >= 1000:
+	else:
+		current_tc = user_data.thrashcoin + thrashcoin_queue[cmd.message.author.id]
+
+	if current_tc >= 1000:
+		thrashcoin_queue[cmd.message.author.id] += 4
 		response = '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_munchy + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_munchy + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf
 		for i in range(4):
 			await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 		return
 
 	else:
-		response = "You don't have enough !thrashcoin to !quadruplethrash. ({}/1000)".format(user_data.thrashcoin)
+		response = "You don't have enough !thrashcoin to !quadruplethrash. ({}/1000)".format(current_tc)
 
 	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 
 async def quintuple_thrash(cmd):
-	user_data = Thrasher(id_user = cmd.message.author.id)
-	user_data.thrashcoin += 5
-	user_data.persist()
+	user_data = Thrasher(id_user=cmd.message.author.id)
+	if cmd.message.author.id not in thrashcoin_queue.keys():
+		thrashcoin_queue[cmd.message.author.id] = 0
+		current_tc = user_data.thrashcoin
 
-	if user_data.thrashcoin >= 10000:
+	else:
+		current_tc = user_data.thrashcoin + thrashcoin_queue[cmd.message.author.id]
+
+	if current_tc >= 10000:
+		thrashcoin_queue[cmd.message.author.id] += 5
 		response = '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_munchy + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_munchy + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf
 		for i in range(5):
 			await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 		return
 
 	else:
-		response = "You don't have enough !thrashcoin to !quintuplethrash. ({}/10000)".format(user_data.thrashcoin)
+		response = "You don't have enough !thrashcoin to !quintuplethrash. ({}/10000)".format(current_tc)
 
 	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 
 async def sextuple_thrash(cmd):
-	user_data = Thrasher(id_user = cmd.message.author.id)
-	user_data.thrashcoin += 6
-	user_data.persist()
+	user_data = Thrasher(id_user=cmd.message.author.id)
+	if cmd.message.author.id not in thrashcoin_queue.keys():
+		thrashcoin_queue[cmd.message.author.id] = 0
+		current_tc = user_data.thrashcoin
 
-	if user_data.thrashcoin >= 100000:
+	else:
+		current_tc = user_data.thrashcoin + thrashcoin_queue[cmd.message.author.id]
+
+	if current_tc >= 100000:
+		thrashcoin_queue[cmd.message.author.id] += 6
 		response = '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_munchy + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_munchy + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf
 		for i in range(6):
 			await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 		return
 
 	else:
-		response = "You don't have enough !thrashcoin to !sextuplethrash. ({}/100000)".format(user_data.thrashcoin)
+		response = "You don't have enough !thrashcoin to !sextuplethrash. ({}/100000)".format(current_tc)
 
 	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 
 async def septuple_thrash(cmd):
-	user_data = Thrasher(id_user = cmd.message.author.id)
-	user_data.thrashcoin += 7
-	user_data.persist()
+	user_data = Thrasher(id_user=cmd.message.author.id)
+	if cmd.message.author.id not in thrashcoin_queue.keys():
+		thrashcoin_queue[cmd.message.author.id] = 0
+		current_tc = user_data.thrashcoin
 
-	if user_data.thrashcoin >= 1000000:
+	else:
+		current_tc = user_data.thrashcoin + thrashcoin_queue[cmd.message.author.id]
+
+	if current_tc >= 1000000:
+		thrashcoin_queue[cmd.message.author.id] += 7
 		response = '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_munchy + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_s1 + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_munchy + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s3 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + '\n' + cfg.emote_blank + cfg.emote_blank + cfg.emote_blank + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_s1 + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf + cfg.emote_rf
 		for i in range(7):
 			await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 		return
 
 	else:
-		response = "You don't have enough !thrashcoin to !septuplethrash. ({}/1000000)".format(user_data.thrashcoin)
+		response = "You don't have enough !thrashcoin to !septuplethrash. ({}/1000000)".format(current_tc)
 
 	return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 
@@ -185,13 +219,27 @@ async def thrashcoin(cmd):
 	if cmd.mentions_count == 0:
 		user_data = Thrasher(id_user = cmd.message.author.id)
 
-		response = "You currently have {} !thrashcoin.".format(user_data.thrashcoin)
+		if cmd.message.author.id not in thrashcoin_queue.keys():
+			thrashcoin_queue[cmd.message.author.id] = 0
+			current_tc = user_data.thrashcoin
+
+		else:
+			current_tc = user_data.thrashcoin + thrashcoin_queue[cmd.message.author.id]
+
+		response = "You currently have {} !thrashcoin.".format(current_tc)
 		return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 
 	else:
 		user_data = Thrasher(id_user = cmd.mentions[0].id)
 
-		response = "They currently have {} !thrashcoin.".format(user_data.thrashcoin)
+		if cmd.message.author.id not in thrashcoin_queue.keys():
+			thrashcoin_queue[cmd.message.author.id] = 0
+			current_tc = user_data.thrashcoin
+
+		else:
+			current_tc = user_data.thrashcoin + thrashcoin_queue[cmd.message.author.id]
+
+		response = "They currently have {} !thrashcoin.".format(current_tc)
 		return await utils.send_message(cmd.client, cmd.message.channel, utils.formatMessage(cmd.message.author, response))
 
 async def leaderboard(cmd):
