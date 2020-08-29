@@ -1,3 +1,5 @@
+import cfg
+
 doop = [
     'https://img.booru.org/rfck//images/3/e46b30410cf7632df4e1cfeefb27ba228bde92d9.png',
     'https://img.booru.org/rfck//images/3/7114160bb350c2ec6ab6d6982ab9130004af1817.png',
@@ -2254,7 +2256,9 @@ hex = [
     'https://img.booru.org/rfck//images/7/aed45841d4f34109a3271d8a0d62587a8332391c.png',
     'https://img.booru.org/rfck//images/7/6660a7a1fdab0f0a02c2dbbf6d342dff943b1b47.png',
     'https://img.booru.org/rfck//images/7/99b1dd81d7e33ff90e9f9109c12682543b6b04a9.png',
-] # last addition: https://img.booru.org/rfck//images/7/99b1dd81d7e33ff90e9f9109c12682543b6b04a9.png
+    'https://img.booru.org/rfck//images/7/04fd91e55376d7bb369d583a4f82d101c3e47c96.png',
+    'https://img.booru.org/rfck//images/7/3bd6a0bec1906b9e682cd2578954920b8c14093c.png',
+] # last addition: https://img.booru.org/rfck//images/7/3bd6a0bec1906b9e682cd2578954920b8c14093c.png
 
 smearg = [
     'https://img.booru.org/rfck//images/2/ee4903a169d6f333482601c38cda05e56c0ef4a8.png',
