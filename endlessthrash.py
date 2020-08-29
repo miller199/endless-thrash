@@ -12,6 +12,8 @@ import utils
 import cfg
 import cmd
 
+from thrasher import Thrasher
+
 utils.logMsg('Starting up...')
 init_complete = False
 
@@ -82,8 +84,18 @@ async def on_ready():
 
             utils.logMsg("Periodic hook still active.")
 
+        # Update thrash coin counts in database
+        if len(cmd.thrashcoin_queue) != 0:
+            for thrasher in cmd.thrashcoin_queue.keys():
+                user_data = Thrasher(id_user = thrasher)
+                user_data.thrashcoin += cmd.thrashcoin_queue[thrasher]
+                user_data.persist()
+                cmd.thrashcoin_queue[thrasher] = 0
+
+            utils.logMsg('Thrashcoin updated.')
+
         # Wait a while before running periodic tasks.
-        await asyncio.sleep(15)
+        await asyncio.sleep(900)
 
 
 
