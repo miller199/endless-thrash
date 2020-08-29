@@ -58,7 +58,7 @@ async def on_ready():
     utils.logMsg('Logged in as {} ({}).'.format(client.user.name, client.user.id))
 
     try:
-        await client.change_presence(game=discord.Game(name="!THRASH"))
+        await client.change_presence(activity="!THRASH")
     except:
         utils.logMsg("Failed to change_presence!")
 
